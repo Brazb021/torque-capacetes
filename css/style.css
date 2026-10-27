@@ -428,7 +428,14 @@ body::after {
   :root { --nav-h: 64px; }
   .nav__logo small { display: none; }
   .nav__links { gap: 14px; font-size: 13px; }
-  .hero__title { bottom: 31vh; font-size: 12.5vw; }
+  /* celular: as duas linhas entram no fluxo (acima e abaixo do capacete), sem sobrepor o texto */
+  .hero { grid-template-rows: auto 1fr auto auto; }
+  .hero__title { display: contents; font-size: 11.5vw; }
+  .hero__title .split-line { position: relative; z-index: 1; padding: 0 var(--gutter); }
+  .hero__title .split-line:first-child { order: 1; margin-top: 12px; }
+  .hero__stage { order: 2; }
+  .hero__title .split-line.right { order: 3; margin: -4vh 0 18px; }
+  .hero__bottom { order: 4; }
   .hero__stage { min-height: 52vh; }
   .specs { grid-template-columns: 1fr; }
   .spec:nth-child(odd) { padding-right: 0; }
