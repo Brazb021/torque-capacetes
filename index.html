@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'self'">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{loja} — Capacetes de corrida</title>
+  <meta name="description" content="Capacetes automotivos de alta performance com visualização 3D em 360°.">
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="importmap">
+    { "imports": {
+      "three": "./vendor/three/build/three.module.js",
+      "three/addons/": "./vendor/three/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <header class="nav" data-nav></header>
+
+  <section class="hero">
+    <div class="hero__glow"></div>
+    <h1 class="hero__title" aria-label="Feito para a pista">
+      <span class="split-line"><span class="split-chars" data-split>Feito para</span></span>
+      <span class="split-line right"><span class="split-chars" data-split>a pista</span></span>
+    </h1>
+    <div class="hero__stage" id="hero-stage" data-cursor="Girar"></div>
+    <div class="hero__bottom">
+      <p class="hero__lead"><b>Capacetes de competição</b> para kart, fórmula, rally e endurance. Gire cada modelo em 360° e veja a pintura de perto antes de comprar.</p>
+      <a class="scroll-cue mono" href="#colecao"><i></i>Ver coleção</a>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Fibra de carbono</span><span>FIA 8860</span><span>Snell K2020</span><span>Visualização 360°</span><span>Pinturas exclusivas</span><span>Envio para todo o Brasil</span>
+      <span>Fibra de carbono</span><span>FIA 8860</span><span>Snell K2020</span><span>Visualização 360°</span><span>Pinturas exclusivas</span><span>Envio para todo o Brasil</span>
+    </div>
+  </div>
+
+  <section class="section" id="colecao">
+    <div class="wrap">
+      <div class="section__head">
+        <div data-reveal>
+          <span class="mono muted">Coleção <span id="count"></span></span>
+          <h2 class="section__title">Os <em>capacetes</em></h2>
+        </div>
+        <div class="chips" id="filters" role="group" aria-label="Filtrar por categoria" data-reveal style="--d:.1s"></div>
+      </div>
+      <div class="grid" id="grid">
+        <div class="card skeleton" style="aspect-ratio:.8"></div>
+        <div class="card skeleton" style="aspect-ratio:.8"></div>
+        <div class="card skeleton" style="aspect-ratio:.8"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="features" data-reveal>
+        <div class="feature"><b>360°</b><h3>Gire antes de comprar</h3><p>Cada capacete tem um modelo 3D: arraste para ver todos os ângulos da pintura.</p></div>
+        <div class="feature"><b>FIA</b><h3>Homologados</h3><p>Modelos com certificação FIA, Snell e ECE, com peso e tamanho informados.</p></div>
+        <div class="feature"><b>24h</b><h3>Envio rápido</h3><p>Pedidos aprovados até as 14h saem no mesmo dia útil.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer__big" data-store-name></p>
+      <div class="footer__row"><span>© <span id="year"></span> <span data-store-name></span>. Todos os direitos reservados.</span><span>Capacetes para competição automobilística</span></div>
+      <div class="footer__row" style="margin-top:8px;font-size:11px"><span data-credit></span></div>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/home.js"></script>
+</body>
+</html>

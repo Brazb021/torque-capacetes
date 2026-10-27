@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'self'">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capacete — {loja}</title>
+  <link rel="stylesheet" href="./css/fonts.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="importmap">
+    { "imports": {
+      "three": "./vendor/three/build/three.module.js",
+      "three/addons/": "./vendor/three/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <header class="nav" data-nav></header>
+
+  <section class="viewer" id="viewer">
+    <p class="viewer__name" id="bg-name" aria-hidden="true"></p>
+    <div class="viewer__stage" id="stage" aria-label="Modelo 3D do capacete — arraste para girar"></div>
+    <div class="viewer__photos" id="photos" hidden aria-label="Fotos reais do capacete — arraste para girar"></div>
+    <div class="viewer__hud">
+      <div class="viewer__title">
+        <span class="mono muted" id="brand"></span>
+        <h1 id="name"></h1>
+      </div>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <div class="toggle" id="mode" hidden>
+          <button aria-pressed="true" data-mode="3d">Modelo 3D</button>
+          <button aria-pressed="false" data-mode="photos">Fotos 360°</button>
+        </div>
+        <div class="toggle"><button aria-pressed="true" id="spin">Girar sozinho</button></div>
+        <span class="drag-hint mono">
+          <svg width="28" height="14" viewBox="0 0 28 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 1 1 7l5 6M22 1l5 6-5 6M1 7h26"/></svg>
+          Arraste para girar 360°
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap product">
+      <div>
+        <span class="mono muted">Especificações</span>
+        <p id="desc" style="font-size:clamp(18px,1.8vw,24px);line-height:1.45;margin:14px 0 36px;max-width:680px"></p>
+        <dl class="specs" id="specs"></dl>
+        <div id="gallery-wrap" hidden style="margin-top:48px">
+          <span class="mono muted">Fotos do capacete</span>
+          <div class="gallery" id="gallery" style="margin-top:16px"></div>
+        </div>
+      </div>
+      <aside class="buy" id="buy"></aside>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap footer__row"><a href="./#colecao" class="mono">← Voltar para a coleção</a><span data-store-name></span></div>
+    <div class="wrap footer__row" style="margin-top:8px;font-size:11px"><span data-credit></span></div>
+  </footer>
+
+  <script type="module" src="./js/product.js"></script>
+</body>
+</html>
